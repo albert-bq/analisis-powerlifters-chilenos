@@ -14,9 +14,10 @@ st.set_page_config(
 # --- Cargar Modelo y Datos ---
 # Cargar el nuevo pipeline multiobjetivo
 try:
+    # Carga el modelo directamente desde la raíz
     model = joblib.load('powerlifting_multi_model.joblib')
 except FileNotFoundError:
-    st.error("Error: No se encontró el archivo del modelo 'powerlifting_multi_model.joblib'. Asegúrate de que esté en la misma carpeta que app.py.")
+    st.error("Error: No se pudo encontrar el archivo del modelo 'powerlifting_multi_model.joblib' en la raíz del proyecto.")
     st.stop()
 
 # Cargar los datos originales para las opciones del menú
